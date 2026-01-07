@@ -70,46 +70,46 @@
     Blynk.virtualWrite(V3,g.gyro.x);
     Blynk.virtualWrite(V4,g.gyro.y);
     Blynk.virtualWrite(V5,g.gyro.z);
-   delay(200);
-  }
-  }
- void setup()
-  {   
-   Serial.begin(115200);
-       Blynk.begin(auth, ssid, pass);
-        Blynk.logEvent("alert","Fall detected !");
-    while (!Serial)
-    delay(10); // will pause Zero, Leonardo, etc until serial console opens
-     Serial.println("Adafruit MPU6050 test!");
- // Try to initialize!
-  if (!mpu.begin()) {
-    Serial.println("Failed to find MPU6050 chip");
-    while (1) {
-      delay(10);
-    }
-  }
-  Serial.println("MPU6050 Found!");
-//setupt motion detection
-  mpu.setHighPassFilter(MPU6050_HIGHPASS_0_63_HZ);
-  mpu.setMotionDetectionThreshold(1);
-  mpu.setMotionDetectionDuration(20);
-  mpu.setInterruptPinLatch(true); // Keep it latched.  Will turn off when reinitialized.
-  mpu.setInterruptPinPolarity(true);
-  mpu.setMotionInterrupt(true);
-  Serial.println("");
-  delay(100);
-  timer.setInterval(1000L, sendSensor);
-}
-void loop()
-{
-  if(Blynk.connected())
-  {
-    Serial.println("Device is online");
-  }
-      else
-      {
-        Serial.println("Device is offline")
-  }
-      Blynk.run();
-      timer.run();
- }
+    delay(200);
+          }
+         }
+        void setup()
+         {   
+          Serial.begin(115200);
+              Blynk.begin(auth, ssid, pass);
+               Blynk.logEvent("alert","Fall detected !");
+           while (!Serial)
+           delay(10); // will pause Zero, Leonardo, etc until serial console opens
+            Serial.println("Adafruit MPU6050 test!");
+        // Try to initialize!
+         if (!mpu.begin()) {
+           Serial.println("Failed to find MPU6050 chip");
+           while (1) {
+             delay(10);
+           }
+         }
+         Serial.println("MPU6050 Found!");
+       //setupt motion detection
+         mpu.setHighPassFilter(MPU6050_HIGHPASS_0_63_HZ);
+         mpu.setMotionDetectionThreshold(1);
+         mpu.setMotionDetectionDuration(20);
+         mpu.setInterruptPinLatch(true); // Keep it latched.  Will turn off when reinitialized.
+         mpu.setInterruptPinPolarity(true);
+         mpu.setMotionInterrupt(true);
+         Serial.println("");
+         delay(100);
+         timer.setInterval(1000L, sendSensor);
+       }
+       void loop()
+       {
+         if(Blynk.connected())
+         {
+           Serial.println("Device is online");
+         }
+             else
+             {
+               Serial.println("Device is offline")
+         }
+             Blynk.run();
+             timer.run();
+        }
