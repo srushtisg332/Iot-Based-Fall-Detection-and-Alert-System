@@ -17,7 +17,7 @@
 
 
 ## CODE
-B: SOURCE CODE
+     B: SOURCE CODE
      #define BLYNK_TEMPLATE_ID "TMPL3vyg4Zcw5"
      #define BLYNK_TEMPLATE_NAME "Iot based fall detector"
      #define BLYNK_AUTH_TOKEN "9vgSFiLullfiTzHxdFeyRDhKWb6Rdb7m"   
@@ -34,8 +34,8 @@ B: SOURCE CODE
      char pass[] = "sindhu193";
      BlynkTimer timer;
      void sendSensor()
- {
-  if(mpu.getMotionInterruptStatus()) {
+     {
+     if(mpu.getMotionInterruptStatus()) {
     /* Get new sensor events with the readings */
     sensors_event_t a, g, temp;
     mpu.getEvent(&a, &g, &temp);
@@ -58,8 +58,8 @@ B: SOURCE CODE
     Serial.print("GyroZ:");
     Serial.print(g.gyro.z);
     Serial.println("");
-  // You can send any value at any time.
-  // Please don't send more that 10 values per second.
+    // You can send any value at any time.
+    // Please don't send more that 10 values per second.
         if( a.acceleration.x >=5.0 )
     {
                   Blynk.logEvent("alert","Fall detected");
@@ -72,9 +72,9 @@ B: SOURCE CODE
     Blynk.virtualWrite(V5,g.gyro.z);
    delay(200);
   }
-}
-void setup()
-{   
+  }
+ void setup()
+  {   
    Serial.begin(115200);
        Blynk.begin(auth, ssid, pass);
         Blynk.logEvent("alert","Fall detected !");
