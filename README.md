@@ -76,12 +76,6 @@ The IoT-Based Fall Detection and Alert System is an embedded healthcare monitori
 - IoT cloud communication using Blynk  
 - Debugging and testing embedded hardware systems  
 
-## Conclusion
-The IoT-Based Fall Detection and Alert System effectively demonstrates the integration of embedded systems and IoT technologies for healthcare safety applications. By combining the ESP32 microcontroller with the MPU6050 motion sensor, the system reliably detects fall events and transmits real-time alerts via Wi-Fi using the Blynk platform. The project addresses practical challenges such as sensor calibration, false detection reduction, and reliable communication, highlighting the potential of low-cost IoT solutions in emergency response and patient monitoring systems.
-
-## License
-This project is licensed under the MIT License.
-
 
 ## CODE
      B: SOURCE CODE
@@ -180,3 +174,5 @@ This project is licensed under the MIT License.
              Blynk.run();
              timer.run();
         }
+## Conclusion
+The IoT-Based Fall Detection and Alert System effectively demonstrates the integration of embedded systems and IoT technologies for healthcare safety applications. By combining the ESP32 microcontroller with the MPU6050 motion sensor, the system reliably detects fall events and transmits real-time alerts via Wi-Fi using the Blynk platform. The project addresses practical challenges such as sensor calibration, false detection reduction, and reliable communication, highlighting the potential of low-cost IoT solutions in emergency response and patient monitoring systems.
